@@ -122,7 +122,18 @@
                 carregarPergunta();
             } else {
                 resultadoElemento.textContent += " Fim do Jogo!";
+                // Adicionando botão de recarregar
+                const recarregarBotao = document.createElement("button");
+                recarregarBotao.textContent = "Jogar Novamente";
+                recarregarBotao.onclick = recarregarJogo;
+                resultadoElemento.appendChild(recarregarBotao);
             }
+        }
+
+        function recarregarJogo() {
+            perguntaAtual = 0;
+            carregarPergunta();
+            document.getElementById("resultado").textContent = ""; // Limpar resultado anterior
         }
 
         carregarPergunta();
